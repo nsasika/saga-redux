@@ -1,4 +1,4 @@
-import { counterSlice } from "@/features/counter/counterSlice";
+import { counterSlice } from "@/components/features/counter/counterSlice";
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { configureStore } = require("@reduxjs/toolkit");
