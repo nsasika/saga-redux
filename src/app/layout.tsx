@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Aeon Bank",
   description: "Created by Aeon Development team",
-  icons:{
+  icons: {
     icon: "/aeon_bank_logo.jpeg",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -30,8 +30,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >     <NavBar/>
-            {children}
+      >
+        {" "}
+        <NavBar />
+        {children}
       </body>
     </html>
   );

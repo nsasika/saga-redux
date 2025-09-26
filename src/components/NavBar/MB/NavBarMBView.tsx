@@ -12,6 +12,7 @@ const NavBarMBView: React.FC<NavBarMBViewProps> = ({
   isOpen,
   toggleMenu,
   handleLogin,
+  setIsOpen,
 }) => {
   const [searchValue, setSearchValue] = useState("");
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +40,7 @@ const NavBarMBView: React.FC<NavBarMBViewProps> = ({
             <SearchField />
             <Button onClick={toggleMenu} icon={<HiX className="h-6 w-6" />} />
           </div>
-          <NavBarOptions isOpen={isOpen} />
+          <NavBarOptions isOpen={isOpen} setIsOpen={setIsOpen} />
           <NavBarLoginBtn handleLogin={handleLogin} />
         </div>
       ) : (

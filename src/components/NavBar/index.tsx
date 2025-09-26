@@ -1,6 +1,10 @@
 "use client";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { NAV_BAR_TITLE_DESKTOP, NAV_BAR_TITLE_MB } from "@/utils/constants";
+import {
+  APP_ROUTES,
+  NAV_BAR_TITLE_DESKTOP,
+  NAV_BAR_TITLE_MB,
+} from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import NavBarDesktopView from "./IB/NavBarDesktopView";
@@ -12,11 +16,12 @@ const NavBar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  const handleLogin = () => {
-    router.push("/login");
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    router.push("/");
   };
+
+  const handleLogin = () => router.push(APP_ROUTES.login);
 
   useEffect(() => {
     setIsOpen(false);
@@ -33,6 +38,7 @@ const NavBar: React.FC = () => {
             isOpen={isOpen}
             toggleMenu={toggleMenu}
             handleLogin={handleLogin}
+            setIsOpen={setIsOpen}
           />
         ) : (
           <NavBarDesktopView handleLogin={handleLogin} />

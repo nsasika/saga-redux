@@ -5,6 +5,7 @@ export interface NavBarOption {
 
 export type NavBarOptionsProps = {
   isOpen?: boolean;
+  setIsOpen?: (value: boolean) => void;
 };
 
 export interface NavBarTitleProps {
@@ -15,6 +16,7 @@ export interface NavBarMBViewProps {
   isOpen: boolean;
   toggleMenu: () => void;
   handleLogin: () => void;
+  setIsOpen: (value: boolean) => void;
 }
 
 export interface NavBarLoginBtnProps {
